@@ -7,9 +7,10 @@ const openai = new OpenAI({
 });
 
 export async function POST(request: Request) {
+  console.log("trying...");
   try {
     const { event } = await request.json();
-
+    console.log("event", event);
     // Prepare the prompt for OpenAI
     const prompt = `The following historical event has a date and a description "${event}. Please reframe it but do not include the date!.
     You can add a small bit of historical context that isn't included in the description. For example,

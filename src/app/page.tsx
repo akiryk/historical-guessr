@@ -29,7 +29,13 @@ export default async function Home() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <main className="m-8">
-        <p className="font-bold">When did the following event occur?</p>
+        <p></p>
+        <p className="font-bold">
+          This doesn't work well, so{" "}
+          <a href={`${url}/game`} className="text-sky-500">
+            try this instead
+          </a>
+        </p>
 
         <section className="my-2 p-4 bg-gray-100">
           <p className=" text-orange-800">
