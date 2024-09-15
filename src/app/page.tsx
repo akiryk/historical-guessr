@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import GuessForm from "@/app/components/GuessForm";
-import dynamic from "next/dynamic";
 
 export const dynamic = "force-dynamic";
 
