@@ -1,11 +1,13 @@
-import { NextResponse } from "next/server";
+import path from "path";
 import fs from "fs/promises";
+import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
 
 // Function to get a random year from the JSON file
 async function getRandomYear() {
-  const years = await fs.readFile("years_with_events.json", "utf-8");
+  const filePath = path.join(process.cwd(), "public", "years_with_events.json");
+  const years = await fs.readFile(filePath, "utf-8");
   const yearsArray = JSON.parse(years);
   const randomIndex = Math.floor(Math.random() * yearsArray.length);
   return yearsArray[randomIndex];
