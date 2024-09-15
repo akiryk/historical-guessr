@@ -13,8 +13,6 @@ export default async function Home() {
   const data = await response.json();
   if (data.error) {
     console.error(data.error);
-  } else {
-    console.log("we got data about event", data);
   }
 
   // Call the reframe-event API route to reframe the event
