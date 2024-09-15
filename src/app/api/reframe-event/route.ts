@@ -10,7 +10,9 @@ export async function POST(request: Request) {
     const { event } = await request.json();
 
     // Prepare the prompt for OpenAI
-    const prompt = `Reframe the following historical event in a more conversational tone: "${event}"`;
+    const prompt = `The following historical event has a date and a description "${event}. Please reframe it but do not include the date!.
+    You can add a small bit of historical context that isn't included in the description. For example,
+    add one brief sentence about the event's significance or the people involved. Remember: don't include the year!`;
 
     // Call OpenAI's API
     const completion = await openai.completions.create({
