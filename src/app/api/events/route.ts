@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import fs from "fs/promises";
 
+export const dynamic = "force-dynamic";
+
 // Function to get a random year from the JSON file
 async function getRandomYear() {
   const years = await fs.readFile("years_with_events.json", "utf-8");
@@ -27,6 +29,8 @@ async function getEventsByRandomYear() {
     {
       headers: {
         "X-Api-Key": apiKey,
+        "Cache-Control":
+          "no-store, no-cache, must-revalidate, proxy-revalidate",
       },
     }
   );
