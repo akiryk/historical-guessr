@@ -5,8 +5,8 @@ export default function GuessForm({ actualYear }: { actualYear: number }) {
   const [guess, setGuess] = useState("");
   const [grade, setGrade] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
 
     const guessedYear = parseInt(guess, 10);
     const difference = Math.abs(guessedYear - actualYear);
