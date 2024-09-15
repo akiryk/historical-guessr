@@ -2,7 +2,7 @@ import { Suspense } from "react";
 
 export default async function Home() {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_SITE_URL}/api/events`,
+    `https://historical-guessr.vercel.app/api/events`,
     {
       cache: "no-store", // Prevents caching if you want fresh data on each request
     }
