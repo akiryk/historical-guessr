@@ -31,7 +31,7 @@ export default async function Home() {
       <main className="m-8">
         <p></p>
         <p className="font-bold">
-          This doesn't work well, so{" "}
+          This doesn&lsquo;t work well, so{" "}
           <a href={`${url}/game`} className="text-sky-500">
             try this instead
           </a>
