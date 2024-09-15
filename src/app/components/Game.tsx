@@ -14,7 +14,7 @@ type Event = {
 export default function EventFetcher() {
   const [eventData, setEventData] = useState<Event | null>(null);
   const [reframedEvent, setReframedEvent] = useState("");
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function EventFetcher() {
         console.log(reframedData);
         setReframedEvent(reframedData.conversationalEvent);
       } catch (err) {
-        setError(err.message);
+        setError(err as Error);
       } finally {
         setLoading(false);
       }
@@ -54,7 +54,7 @@ export default function EventFetcher() {
   }
 
   if (error) {
-    return <p>Error: {error}</p>;
+    return <p>Error: {error.message}</p>;
   }
 
   return (
